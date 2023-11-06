@@ -1,0 +1,53 @@
+{
+  "name": "jokes-api",
+  "version": "1.0.0",
+  "description": "Jokes API",
+  "scripts": {
+    "start": "NODE_ENV=prod node dist/index.js",
+    "dev": "npm run lint && npm run prettier && NODE_ENV=dev nodemon src/index.js --exec babel-node",
+    "lint": "eslint ./ --fix",
+    "prettier": "prettier -c ./ -w",
+    "build": "npm run lint && npm run prettier && rimraf dist && babel src -d dist",
+    "docs": "rimraf public/apidoc && apidoc -i Docs -o public/apidoc/",
+    "precommit": "npm run build && npm run docs",
+    "test": "NODE_ENV=test mocha --require @babel/register --timeout 10000 --exit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com:velantcode/jokes-api.git"
+  },
+  "keywords": [],
+  "author": "velantcode",
+  "homepage": "https://github.com/velantcode/jokes-api#readme",
+  "devDependencies": {
+    "@babel/cli": "7.23.0",
+    "@babel/core": "7.23.2",
+    "@babel/node": "7.22.19",
+    "@babel/plugin-transform-runtime": "7.23.2",
+    "@babel/preset-env": "7.23.2",
+    "@babel/register": "7.22.15",
+    "apidoc": "1.2.0",
+    "chai": "4.3.10",
+    "chai-http": "4.4.0",
+    "eslint": "8.53.0",
+    "eslint-config-airbnb-base": "15.0.0",
+    "eslint-config-prettier": "9.0.0",
+    "eslint-plugin-import": "2.29.0",
+    "eslint-plugin-prettier": "5.0.1",
+    "mocha": "10.2.0",
+    "nodemon": "3.0.1",
+    "prettier": "3.0.3",
+    "rimraf": "5.0.5"
+  },
+  "dependencies": {
+    "axios": "1.6.0",
+    "cors": "2.8.5",
+    "dayjs": "1.11.10",
+    "express": "4.18.2",
+    "mongoose": "8.0.0",
+    "morgan": "1.10.0"
+  },
+  "optionalDependencies": {
+    "win-node-env": "0.6.1"
+  }
+}
