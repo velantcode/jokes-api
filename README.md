@@ -36,6 +36,10 @@
   http://yourdomain.com/apidoc
 ```
 
+## Archivo POSTMAN
+
+En la carpeta `POSTMAN_FILES`, encontrarás el JSON para importar en POSTMAN y realizar las pruebas pertinentes a los endpoints.
+
 ## Documentación de los paquetes utilizados.
 
 - [Babel Docs](https://babeljs.io/).
